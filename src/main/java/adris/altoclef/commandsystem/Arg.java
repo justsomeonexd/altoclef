@@ -162,47 +162,7 @@ public class Arg<T> extends ArgBase {
         }
 
         // TODO: Array
-        /*
-        // For arrays, parse them uh individually.
-        if (IsInstanceOf(vType, List)) {
-        // Get the type of the individual array generic by creating a dummy. Not a smart idea but whatever.
-        Array dummy = GetConverted<Array>(Activator.CreateInstance<V>());
-        Type subType = dummy.GetType().GetElementType();
-
-        // Call the generic method with reflection. TODO: This is kinda bad but whatever.
-        var thisMethod = typeof(Arg<T>).GetMethod("ParseUnitUtil");
-        var thisMethodRef = thisMethod.MakeGenericMethod(subType);
-
-        List<object> result = new List<object>();
-
-        String[] remainingUnits = new String[unitPlusRemainder.Length];
-        unitPlusRemainder.CopyTo(remainingUnits, 0);
-        foreach(String subUnit in unitPlusRemainder) {
-
-        // Sanity check
-        if (remainingUnits.Length == 0 || subUnit != remainingUnits[0]) {
-        Debug.LogError("SANITY CHECK FAILED!");
-        Debug.LogError($"This shouldn't happen: {remainingUnits.Length}");
-        Debug.LogError($"This shouldn't happen: {subUnit} != {(remainingUnits.Length != 0? remainingUnits[0] : null)}");
-        break;
-        }
-
-        // Parse the first value and add to our array.
-        object subValue = thisMethodRef.Invoke(this, new object[] { subUnit, remainingUnits });
-        result.Add(subValue);
-
-        Debug.Log($"MID ARRAY DEBUG: Sub: {subUnit} = {subValue}");
-
-        // Pop off the first unit
-        String[] copy = new String[remainingUnits.Length - 1];
-        remainingUnits.CopyTo(copy, 1);
-        remainingUnits = copy;
-        }
-
-        return GetConverted(vType,  result.ToArray() );
-        }
-         */
-        throw new CommandException("Arguments are not programmed to parse the following type: " + vType + ". This is either not implemented intentionally or by accident somehow.");
+                throw new CommandException("Arguments are not programmed to parse the following type: " + vType + ". This is either not implemented intentionally or by accident somehow.");
     }
 
     @Override
