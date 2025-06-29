@@ -60,7 +60,24 @@ This is a **fabric only** mod, currently only available for **Minecraft 1.18**.
 For older MC versions, try [multiconnect](https://www.curseforge.com/minecraft/mc-mods/multiconnect) (NOTE: multiconnect is untested and not affiliated with altoclef, use at your own risk!)
 
 
+[Mod Setup](docs/mod_setup.md)
+
 ## [Usage Guide](usage.md)
+
+### Running Multiple Bots
+
+You can launch more than one client with the mod installed. Each instance should
+use a different Minecraft account. From the command line run:
+
+```bash
+./gradlew runClient --args="--username <ACCOUNT1>"
+./gradlew runClient --args="--username <ACCOUNT2>"
+```
+
+This lets you control separate bots at once. Assign goals with commands such as
+`@gamer` to beat the game or `@destroy_spawners` to remove blaze spawners.
+
+See [AI-Based Bot Roadmap](docs/ai_roadmap.md) for guidance on using reinforcement learning with multiple bots.
 
 ## [TODO's/Future Features](todos.md)
 
